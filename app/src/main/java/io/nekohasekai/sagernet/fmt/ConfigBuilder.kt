@@ -96,6 +96,7 @@ const val TAG_DNS_REMOTE = "dns-remote"
 const val TAG_DNS_DIRECT = "dns-direct"
 const val TAG_DNS_LOCAL = "dns-local"
 const val TAG_DNS_FAKE = "dns-fake"
+const val TAG_DNS_FAKE_DIRECT = "dns-fake-direct"
 
 const val LOCALHOST4 = "127.0.0.1"
 
@@ -684,6 +685,10 @@ fun buildConfig(
 
                 when (val outID = rule.outbound) {
                     RuleEntity.OUTBOUND_DIRECT -> {
+                        if (useFakeDns) userDNSRuleList.add(makeDnsRuleObj().apply {
+                            server = TAG_DNS_FAKE_DIRECT
+                            query_type = FAKE_DNS_QUERY_TYPE
+                        })
                         userDNSRuleList.add(makeDnsRuleObj().apply {
                             server = TAG_DNS_DIRECT
                         })
@@ -693,7 +698,6 @@ fun buildConfig(
                     RuleEntity.OUTBOUND_PROXY -> {
                         if (useFakeDns) userDNSRuleList.add(makeDnsRuleObj().apply {
                             server = TAG_DNS_FAKE
-                            inbound = listOf(TAG_TUN)
                             query_type = FAKE_DNS_QUERY_TYPE
                         })
                         userDNSRuleList.add(makeDnsRuleObj().apply {
@@ -894,9 +898,14 @@ fun buildConfig(
                 dns.servers.add(DNSServerOptions().apply {
                     address = "fakeip"
                     tag = TAG_DNS_FAKE
+                    strategy = autoDnsDomainStrategy(SingBoxOptionsUtil.domainStrategy(TAG_DNS_REMOTE))
+                })
+                dns.servers.add(DNSServerOptions().apply {
+                    address = "fakeip"
+                    tag = TAG_DNS_FAKE_DIRECT
+                    strategy = autoDnsDomainStrategy(SingBoxOptionsUtil.domainStrategy(TAG_DNS_DIRECT))
                 })
                 dns.rules.add(DNSRule_Default().apply {
-                    inbound = listOf(TAG_TUN)
                     server = TAG_DNS_FAKE
                     disable_cache = true
                     query_type = FAKE_DNS_QUERY_TYPE
