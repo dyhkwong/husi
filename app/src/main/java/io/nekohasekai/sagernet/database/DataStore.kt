@@ -86,6 +86,9 @@ object DataStore : OnPreferenceDataStoreChangeListener {
 
     var appTLSVersion by configurationStore.string(Key.APP_TLS_VERSION)
     var clashAPIListen by configurationStore.string(Key.CLASH_API_LISTEN)
+    var clashAPISecret by configurationStore.string(Key.CLASH_API_SECRET)
+    var accessControlAllowOrigin by configurationStore.string(Key.ACCESS_CONTROL_ALLOW_ORIGIN)
+    var accessControlAllowPrivateNetwork by configurationStore.boolean(Key.ACCESS_CONTROL_ALLOW_PRIVATE_NETWORK)
     var showBottomBar by configurationStore.boolean(Key.SHOW_BOTTOM_BAR)
     var interruptSelector by configurationStore.boolean(Key.INTERRUPT_SELECTOR)
 

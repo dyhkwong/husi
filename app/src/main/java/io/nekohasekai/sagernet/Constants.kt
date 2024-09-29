@@ -199,6 +199,9 @@ object Key {
 
     const val APP_TLS_VERSION = "appTLSVersion"
     const val CLASH_API_LISTEN = "clashAPIListen"
+    const val CLASH_API_SECRET = "clashAPISecret"
+    const val ACCESS_CONTROL_ALLOW_ORIGIN = "accessControlAllowOrigin"
+    const val ACCESS_CONTROL_ALLOW_PRIVATE_NETWORK = "accessControlAllowPrivateNetwork"
     const val ENABLED_CAZILLA = "enabledCazilla"
     const val INTERRUPT_SELECTOR = "interruptSelector"
 }

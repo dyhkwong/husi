@@ -304,6 +304,18 @@
             app:key="clashAPIListen"
             app:title="@string/enable_clash_api"
             app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            app:dialogLayout="@layout/layout_password_dialog"
+            app:icon="@drawable/ic_settings_password"
+            app:key="clashAPISecret"
+            app:title="@string/clash_api_secret" />
+        <EditTextPreference
+            app:defaultValue="*"
+            app:key="accessControlAllowOrigin"
+            app:title="@string/access_control_allow_origin" />
+        <SwitchPreference
+            app:key="accessControlAllowPrivateNetwork"
+            app:title="@string/access_control_allow_private_network" />
         <SwitchPreference
             app:icon="@drawable/ic_baseline_shutter_speed_24"
             app:key="interruptSelector"

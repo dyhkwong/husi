@@ -528,6 +528,9 @@
     <string name="save">Save</string>
     <string name="set_panel_url">Set panel URL</string>
     <string name="enable_clash_api">Clash API listen address</string>
+    <string name="clash_api_secret">Clash API secret</string>
+    <string name="access_control_allow_origin">CORS Allowed origins</string>
+    <string name="access_control_allow_private_network">Allow access from private network</string>
     <string name="log_level">Log Level</string>
     <string name="xtls_flow">Flow (VLESS Sub-protocol)</string>
     <string name="bypass_lan_in_core">Bypass LAN in Core</string>

@@ -225,10 +225,19 @@ fun buildConfig(
                 }
             }
             clash_api = ClashAPIOptions().apply {
-                external_controller = DataStore.clashAPIListen.ifBlank {
-                    "$LOCALHOST4:${mkPort()}"
-                }
                 default_mode = RuleEntity.MODE_RULE
+                if (DataStore.clashAPIListen.isNotBlank()) {
+                    external_controller = DataStore.clashAPIListen
+                    if (DataStore.clashAPISecret.isNotBlank()) {
+                        secret = DataStore.clashAPISecret
+                    }
+                    if (DataStore.accessControlAllowOrigin.isNotBlank()) {
+                        access_control_allow_origin = DataStore.accessControlAllowOrigin.listByLineOrComma()
+                    }
+                    if (DataStore.accessControlAllowPrivateNetwork) {
+                        access_control_allow_private_network = true
+                    }
+                }
             }
             cache_file = CacheFileOptions().apply {
                 enabled = true
