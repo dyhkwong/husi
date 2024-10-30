@@ -6,7 +6,6 @@ go 1.23.0
 require (
 	github.com/gofrs/uuid/v5 v5.3.0
 	github.com/miekg/dns v1.1.62
-	github.com/sagernet/gomobile v0.1.4
 	github.com/sagernet/sing v0.5.1
 	github.com/sagernet/sing-box v1.10.4-0.20241130042048-6e7ecbd4f53f
 	github.com/sagernet/sing-dns v0.3.0
@@ -15,6 +14,7 @@ require (
 	github.com/xchacha20-poly1305/cazilla v0.3.3
 	github.com/xchacha20-poly1305/libping v0.7.1
 	golang.org/x/crypto v0.29.0
+	golang.org/x/mobile v0.0.0-20241108191957-fa514ef75a0f
 	golang.org/x/sys v0.27.0
 )
 
@@ -86,12 +86,12 @@ require (
 	go.uber.org/zap v1.27.0 // indirect
 	go4.org/netipx v0.0.0-20231129151722-fdeea329fbba // indirect
 	golang.org/x/exp v0.0.0-20240719175910-8a7402abbf56 // indirect
-	golang.org/x/mod v0.20.0 // indirect
+	golang.org/x/mod v0.22.0 // indirect
 	golang.org/x/net v0.31.0 // indirect
 	golang.org/x/sync v0.9.0 // indirect
 	golang.org/x/text v0.20.0 // indirect
 	golang.org/x/time v0.7.0 // indirect
-	golang.org/x/tools v0.24.0 // indirect
+	golang.org/x/tools v0.27.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240814211410-ddb44dafa142 // indirect
 	google.golang.org/grpc v1.67.1 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
